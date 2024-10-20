@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanderlust Explorers</title>
+    <!-- CSS Start -->
+    <style>
+        /* landing-page-design */
+        .landing-page-design {
+          background-color: #fff;
+          display: flex;
+          padding-top: 50px;
+          flex-direction: column;
+          overflow: hidden;
+          align-items: center;
+        }
+        /* header-container */
+        .header-container {
+          display: flex;
+          width: 100%;
+          max-width: 1178px;
+          gap: 20px;
+          font-family: Mulish, sans-serif;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        }
+        @media (max-width: 991px) {
+          .header-container {
+            max-width: 100%;
+          }
+        }
+        /* logo-container */
+        .logo-container {
+          display: flex;
+          gap: 17px;
+          font-size: 36px;
+          color: #131318;
+          font-weight: 800;
+        }
+        /* logo-image */
+        .logo-image {
+          aspect-ratio: 1.17;
+          object-fit: contain;
+          object-position: center;
+          width: 56px;
+        }
+        /* logo-text */
+        .logo-text {
+          flex-basis: auto;
+        }
+        /* nav-container */
+        .nav-container {
+          display: flex;
+          align-items: center;
+          gap: 40px 44px;
+          font-size: 18px;
+          color: #424247;
+          font-weight: 400;
+          white-space: nowrap;
+          text-align: center;
+          justify-content: center;
+          flex-wrap: wrap;
+          margin: auto 0;
+          padding: 10px 0;
+        }
+        @media (max-width: 991px) {
+          .nav-container {
+            max-width: 100%;
+            white-space: initial;
+          }
+        }
+        /* nav-item */
+        .nav-item {
+          align-self: stretch;
+          margin: auto 0;
+        }
+        /* nav-item-active */
+        .nav-item-active {
+          color: #ff5400;
+          font-weight: 700;
+        }
+        /* hero-section */
+        .hero-section {
+          display: flex;
+          flex-direction: column;
+          border-radius: 16px;
+          position: relative;
+          min-height: 500px;
+          margin-top: 48px;
+          width: 100%;
+          max-width: 1170px;
+          color: #fff;
+          font: 400 16px Mulish, sans-serif;
+        }
+        @media (max-width: 991px) {
+          .hero-section {
+            max-width: 100%;
+            margin-top: 40px;
+          }
+        }
+        /* hero-image */
+        .hero-image {
+          position: absolute;
+          inset: 0;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+        /* hero-content */
+        .hero-content {
+          position: relative;
+          border-radius: 16px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding: 106px 80px;
+        }
+        @media (max-width: 991px) {
+          .hero-content {
+            max-width: 100%;
+            padding: 100px 20px;
+          }
+        }
+        /* hero-text-container */
+        .hero-text-container {
+          display: flex;
+          margin-bottom: -21px;
+          width: 800px;
+          max-width: 100%;
+          flex-direction: column;
+          align-items: center;
+        }
+        @media (max-width: 991px) {
+          .hero-text-container {
+            margin-bottom: 10px;
+          }
+        }
+        /* hero-title */
+        .hero-title {
+          font-size: 64px;
+          font-weight: 800;
+        }
+        @media (max-width: 991px) {
+          .hero-title {
+            max-width: 100%;
+            font-size: 40px;
+          }
+        }
+        /* hero-description */
+        .hero-description {
+          line-height: 26px;
+          text-align: center;
+          margin-top: 24px;
+        }
+        @media (max-width: 991px) {
+          .hero-description {
+            max-width: 100%;
+          }
+        }
+        /* search-container */
+        .search-container {
+          border-radius: 8px;
+          background-color: rgba(255, 255, 255, 0.3);
+          align-self: stretch;
+          display: flex;
+          margin-top: 48px;
+          align-items: start;
+          gap: 24px;
+          color: rgba(19, 19, 24, 0.5);
+          justify-content: start;
+          flex-wrap: wrap;
+          padding: 16px;
+        }
+        @media (max-width: 991px) {
+          .search-container {
+            max-width: 100%;
+            margin-top: 40px;
+          }
+        }
+        /* search-input */
+        .search-input {
+          border-radius: 8px;
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          width: 174px;
+        }
+        /* search-field  */
+        .search-field {
+          border-radius: 8px;
+          background-color: #fff;
+          padding: 16px;
+        }
+        @media (max-width: 991px) {
+          .search-field {
+            padding-right: 20px;
+          }
+        }
+        /* search-dropdown */
+        .search-dropdown {
+          border-radius: 8px;
+          background-color: #fff;
+          display: flex;
+          gap: 20px;
+          justify-content: space-between;
+          padding: 14px 15px;
+        }
+        @media (max-width: 991px) {
+          .search-dropdown {
+            white-space: initial;
+          }
+        }
+        /* dropdown-text */
+        .dropdown-text {
+          margin: auto 0;
+        }
+        /* dropdown-icon */
+        .dropdown-icon {
+          aspect-ratio: 1;
+          object-fit: contain;
+          object-position: center;
+          width: 24px;
+        }
+        /* search-button */
+        .search-button {
+          border-radius: 8px;
+          background-color: #ff5400;
+          display: flex;
+          gap: 8px;
+          padding: 14px 35px;
+        }
+        @media (max-width: 991px) {
+          .search-button {
+            padding: 0 20px;
+          }
+        }
+        /* search-icon */
+        .search-icon {
+          aspect-ratio: 1;
+          object-fit: contain;
+          object-position: center;
+          width: 24px;
+        }
+        /* search-text */
+        .search-text {
+          margin: auto 0;
+        }
+        /* popular-tours-section */
+        .popular-tours-section {
+          margin-top: 100px;
+          width: 100%;
+          max-width: 1170px;
+        }
+        @media (max-width: 991px) {
+          .popular-tours-section {
+            max-width: 100%;
+            margin-top: 40px;
+          }
+        }
+        /* popular-tours-content  */
+        .popular-tours-content {
+          gap: 20px;
+          display: flex;
+        }
+        @media (max-width: 991px) {
+          .popular-tours-content {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0px;
+          }
+        }
+        /* popular-tours-text */
+        .popular-tours-text {
+          display: flex;
+          flex-grow: 1;
+          flex-direction: column;
+          color: rgba(19, 19, 24, 0.7);
+          font: 400 16px Mulish, sans-serif;
+        }
+        @media (max-width: 991px) {
+          .popular-tours-text {
+            max-width: 100%;
+            margin-top: 40px;
+          }
+        }
+        /* popular-tours-title */
+        .popular-tours-title {
+          color: #131318;
+          font-size: 40px;
+          font-weight: 800;
+          text-align: center;
+          align-self: start;
+        }
+        /* popular-tours-description */
+        .popular-tours-description {
+          line-height: 26px;
+          margin-top: 24px;
+        }
+        @media (max-width: 991px) {
+          .popular-tours-description {
+            max-width: 100%;
+          }
+        }
+        /* popular-tours-features */
+        .popular-tours-features {
+          line-height: 26px;
+          margin: 24px 52px 0 0;
+        }
+        @media (max-width: 991px) {
+          .popular-tours-features {
+            max-width: 100%;
+            margin-right: 10px;
+          }
+        }
+        /* read-more-button */
+        .read-more-button {
+          border-radius: 8px;
+          background-color: #ff5400;
+          align-self: start;
+          margin-top: 32px;
+          font-size: 20px;
+          color: #fff;
+          font-weight: 800;
+          text-align: center;
+          padding: 14px 35px;
+        }
+        @media (max-width: 991px) {
+          .read-more-button {
+            padding: 0 20px;
+          }
+        }
+        /* popular-tours-image */
+        .popular-tours-image {
+          aspect-ratio: 0.98;
+          object-fit: contain;
+          object-position: center;
+          width: 100%;
+          border-radius: 16px;
+          flex-grow: 1;
+        }
+        @media (max-width: 991px) {
+          .popular-tours-image {
+            max-width: 100%;
+            margin-top: 40px;
+          }
+        }
+        /* destination-section */
+        .destination-section {
+          color: #131318;
+          text-align: center;
+          margin-top: 100px;
+          font: 800 40px Mulish, sans-serif;
+        }
+        @media (max-width: 991px) {
+          .destination-section {
+            max-width: 100%;
+            margin-top: 40px;
+          }
+        }
+        /* destination-description */
+        .destination-description {
+          color: rgba(19, 19, 24, 0.7);
+          text-align: center;
+          margin-top: 24px;
+          width: 643px;
+          font: 400 16px/26px Mulish, sans-serif;
+        }
+        @media (max-width: 991px) {
+          .destination-description {
+            max-width: 100%;
+          }
+        }
+        /* destination-grid */
+        .destination-grid {
+          margin-top: 48px;
+          width: 100%;
+          max-width: 1170px;
+        }
+        @media (max-width: 991px) {
+          .destination-grid {
+            max-width: 100%;
+            margin-top: 40px;
+          }
+        }
+        /* destination-row */
+        .destination-row {
+          gap: 20px;
+          display: flex;
+        }
+        @media (max-width: 991px) {
+          .destination-row {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0px;
+          }
+        }
+        /* destination-item */
+        .destination-item {
+          display: flex;
+          flex-direction: column;
+          position: relative;
+          border-radius: 16px;
+          min-height: 300px;
+          flex-grow: 1;
+          color: #fff;
+          white-space: nowrap;
+          text-align: center;
+          padding: 133px 70px;
+          font: 800 28px Mulish, sans-serif;
+        }
+        @media (max-width: 991px) {
+          .destination-item {
+            max-width: 100%;
+            margin-top: 24px;
+            white-space: initial;
+            padding: 100px 20px;
+          }
+        }
+        /* destination-image */
+        .destination-image {
+          position: absolute;
+          inset: 0;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+        /* destination-name */
+        .destination-name {
+          position: relative;
+        }
+        /* why-choose-us-section */
+        .why-choose-us-section {
+          color: #131318;
+          text-align: center;
+          margin-top: 100px;
+          font: 800 40px Mulish, sans-serif;
+        }
+        @media (max-width: 991px) {
+          .why-choose-us-section {
+            margin-top: 40px;
+          }
+        }
+        /* why-choose-us-description */
+        .why-choose-us-description {
+          color: rgba(19, 19, 24, 0.7);
+          text-align: center;
+          margin-top: 24px;
+          width: 643px;
+          font: 400 16px/26px Mulish, sans-serif;
+        }
+        @media (max-width: 991px) {
+          .why-choose-us-description {
+            max-width: 100%;
+          }
+        }
+        /* features-container */
+        .features-container {
+          margin-top: 48px;
+          width: 100%;
+          max-width: 1170px;
+        }
+        @media (max-width: 991px) {
+          .features-container {
+            max-width: 100%;
+            margin-top: 40px;
+          }
+        }
+        /* features-row */
+        .features-row {
+          gap: 20px;
+          display: flex;
+        }
+        @media (max-width: 991px) {
+          .features-row {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0px;
+          }
+        }
+        /* feature-item */
+        .feature-item {
+          border-radius: 16px;
+          display: flex;
+          flex-grow: 1;
+          flex-direction: column;
+          align-items: start;
+          font-family: Mulish, sans-serif;
+          width: 100%;
+          padding: 32px;
+        }
+        @media (max-width: 991px) {
+          .feature-item {
+            max-width: 100%;
+            margin-top: 24px;
+            padding: 0 20px;
+          }
+        }
+        /* feature-icon  */
+        .feature-icon {
+          aspect-ratio: 1;
+          object-fit: contain;
+          object-position: center;
+          width: 64px;
+        }
+        /* feature-title */
+        .feature-title {
+          color: #131318;
+          font-size: 24px;
+          font-weight: 800;
+          margin-top: 32px;
+        }
+        /* feature-description */
+        .feature-description {
+          color: #5a5a5d;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 26px;
+          align-self: stretch;
+          margin-top: 16px;
+        }
+        @media (max-width: 991px) {
+          .feature-description {
+            max-width: 100%;
+          }
+        }
+        /* deals-section  */
+        .deals-section {
+          color: #131318;
+          text-align: center;
+          margin-top: 100px;
+          font: 800 40px Mulish, sans-serif;
+        }
+        @media (max-width: 991px) {
+          .deals-section {
+            margin-top: 40px;
+          }
+        }
+        /* deals-description */
+        .deals-description {
+          color: rgba(19, 19, 24, 0.7);
+          text-align: center;
+          margin-top: 24px;
+          width: 643px;
+          font: 400 16px/26px Mulish, sans-serif;
+        }
+        @media (max-width: 991px) {
+          .deals-description {
+            max-width: 100%;
+          }
+        }
+        /* deal-card */
+        .deal-card {
+          display: flex;
+          flex-direction: column;
+          border-radius: 16px;
+          position: relative;
+          min-height: 500px;
+          margin-top: 48px;
+          width: 1170px;
+          max-width: 100%;
+          align-items: end;
+          justify-content: center;
+          padding: 56px 68px;
+          font: 800 16px Mulish, sans-serif;
+        }
+        @media (max-width: 991px) {
+          .deal-card {
+            margin-top: 40px;
+            padding: 0 20px;
+          }
+        }
+        /* deal-image */
+        .deal-image {
+          position: absolute;
+          inset: 0;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+        /* deal-content */
+        .deal-content {
+          position: relative;
+          border-radius: 16px;
+          background-color: rgba(255, 255, 255, 0.8);
+          display: flex;
+          width: 579px;
+          max-width: 100%;
+          flex-direction: column;
+          align-items: start;
+          padding: 50px 77px;
+          border: 2px solid #fff;
+        }
+        @media (max-width: 991px) {
+          .deal-content {
+            padding: 0 20px;
+          }
+        }
+        /* deal-info */
+        .deal-info {
+          display: flex;
+          gap: 24px;
+          color: #5a5a5d;
+          font-weight: 400;
+        }
+        /* deal-detail */
+        .deal-detail {
+          display: flex;
+          gap: 8px;
+        }
+        /* deal-icon */
+        .deal-icon {
+          aspect-ratio: 1;
+          object-fit: contain;
+          object-position: center;
+          width: 24px;
+        }
+        /* deal-text */
+        .deal-text {
+          margin: auto 0;
+        }
+        /* deal-title */
+        .deal-title {
+          color: #131318;
+          font-size: 24px;
+          margin-top: 24px;
+        }
+        /* deal-description */
+        .deal-description {
+          color: #5a5a5d;
+          font-weight: 400;
+          line-height: 26px;
+          align-self: stretch;
+          margin-top: 16px;
+        }
+        @media (max-width: 991px) {
+          .deal-description {
+            max-width: 100%;
+          }
+        }
+        /* deal-price */
+        .deal-price {
+          color: #ff5400;
+          font-size: 20px;
+          margin-top: 16px;
+        }
+        /* book-now-button */
+        .book-now-button {
+          border-radius: 8px;
+          background-color: #ff5400;
+          margin-top: 24px;
+          font-size: 20px;
+          color: #fff;
+          text-align: center;
+          padding: 14px 25px;
+        }
+        @media (max-width: 991px) {
+          .book-now-button {
+            padding: 0 20px;
+          }
+        }
+        /* see-all-packages */
+        .see-all-packages {
+          border-radius: 8px;
+          background-color: #ff5400;
+          margin-top: 48px;
+          width: 210px;
+          max-width: 100%;
+          color: #fff;
+          text-align: center;
+          padding: 14px 22px;
+          font: 800 20px Mulish, sans-serif;
+        }
+        @media (max-width: 991px) {
+          .see-all-packages {
+            margin-top: 40px;
+            padding: 0 20px;
+          }
+        }
+        /* video-section */
+        .video-section {
+          margin-top: 100px;
+          width: 100%;
+          max-width: 1170px;
+        }
+        @media (max-width: 991px) {
+          .video-section {
+            max-width: 100%;
+            margin-top: 40px;
+          }
+        }
+        /* video-content */
+        .video-content {
+          gap: 20px;
+          display: flex;
+        }
+        @media (max-width: 991px) {
+          .video-content {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0px;
+          }
+        }
+        /* video-text  */
+        .video-text {
+          display: flex;
+          flex-grow: 1;
+          flex-direction: column;
+          align-items: start;
+          color: #131318;
+          font: 800 16px Mulish, sans-serif;
+        }
+        @media (max-width: 991px) {
+          .video-text {
+            max-width: 100%;
+            margin-top: 28px;
+          }
+        }
+        /* video-title  */
+        .video-title {
+          font-size: 40px;
+          line-height: 60px;
+        }
+        @media (max-width: 991px) {
+          .video-title {
+            max-width: 100%;
+          }
+        }
+        /* video-description */
+        .video-description {
+          color: #5a5a5d;
+          font-weight: 400;
+          line-height: 26px;
+          align-self: stretch;
+          margin-top: 24px;
+        }
+        @media (max-width: 991px) {
+          .video-description {
+            max-width: 100%;
+          }
+        }
+        /* video-feature */
+        .video-feature {
+          font-weight: 700;
+          line-height: 26px;
+          margin-top: 24px;
+        }
+        @media (max-width: 991px) {
+          .video-feature {
+            max-width: 100%;
+          }
+        }
+        /* see-more-button */
+        .see-more-button {
+          border-radius: 8px;
+          background-color: #ff5400;
+          margin-top: 32px;
+          font-size: 20px;
+          color: #fff;
+          text-align: center;
+          padding: 14px 42px;
+        }
+        @media (max-width: 991px) {
+          .see-more-button {
+            padding: 0 20px;
+          }
+        }
+        /* video-container */
+        .video-container {
+          display: flex;
+          flex-direction: column;
+          border-radius: 16px;
+          position: relative;
+          min-height: 424px;
+          flex-grow: 1;
+          text-align: center;
+        }
+        @media (max-width: 991px) {
+          .video-container {
+            max-width: 100%;
+            margin-top: 28px;
+          }
+        }
+        /* video-thumbnail */
+        .video-thumbnail {
+          position: absolute;
+          inset: 0;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+        /* video-overlay */
+        .video-overlay {
+          position: relative;
+          border-radius: 16px;
+          display: flex;
+          width: 100%;
+          flex-direction: column;
+          padding: 176px 24px 25px;
+        }
+        @media (max-width: 991px) {
+          .video-overlay {
+            max-width: 100%;
+            padding: 100px 20px 0;
+          }
+        }
+        /* video-controls */
+        .video-controls {
+          display: flex;
+          width: 100%;
+          gap: 40px 80px;
+          flex-wrap: wrap;
+        }
+        @media (max-width: 991px) {
+          .video-controls {
+            max-width: 100%;
+          }
+        }
+        /* video-duration */
+        .video-duration {
+          align-self: end;
+          display: flex;
+          margin-top: 179px;
+          gap: 12px;
+          color: #f3f3f3;
+          white-space: nowrap;
+          font: 400 14px Inter, sans-serif;
+        }
+        @media (max-width: 991px) {
+          .video-duration {
+            margin-top: 40px;
+            white-space: initial;
+          }
+        }
+        /* duration-icon */
+        .duration-icon {
+          aspect-ratio: 1;
+          object-fit: contain;
+          object-position: center;
+          width: 24px;
+        }
+        /* duration-text */
+        .duration-text {
+          margin: auto 0;
+        }
+        /* video-title-overlay */
+        .video-title-overlay {
+          display: flex;
+          flex-direction: column;
+          color: #fff;
+          flex-grow: 1;
+          flex-basis: 0;
+          width: fit-content;
+          font: 700 24px/36px Mulish, sans-serif;
+        }
+        /* video-title-text */
+        .video-title-text {
+          width: 276px;
+        }
+        /* play-button */
+        .play-button {
+          aspect-ratio: 4.33;
+          object-fit: contain;
+          object-position: center;
+          width: 104px;
+          align-self: end;
+          margin-top: 107px;
+          max-width: 100%;
+        }
+        @media (max-width: 991px) {
+          .play-button {
+            margin-top: 40px;
+          }
+        }
+        /* progress-bar  */
+        .progress-bar {
+          border-radius: 8px;
+          background-color: rgba(255, 255, 255, 0.3);
+          display: flex;
+          margin-top: 16px;
+          height: 4px;
+        }
+        @media (max-width: 991px) {
+          .progress-bar {
+            max-width: 100%;
+          }
+        }
+        /* newsletter-section */
+        .newsletter-section {
+          margin-top: 100px;
+          width: 100%;
+          max-width: 1170px;
+        }
+        @media (max-width: 991px) {
+          .newsletter-section {
+            max-width: 100%;
+            margin-top: 40px;
+          }
+        }
+        /* newsletter-content  */
+        .newsletter-content {
+          gap: 20px;
+          display: flex;
+        }
+        @media (max-width: 991px) {
+          .newsletter-content {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0px;
+          }
+        }
+        /* newsletter-form */
+        .newsletter-form {
+          border-radius: 16px;
+          display: flex;
+          flex-grow: 1;
+          flex-direction: column;
+          padding: 40px;
+          font: 400 16px Mulish, sans-serif;
+          border: 1px solid #ff5400;
+        }
+        @media (max-width: 991px) {
+          .newsletter-form {
+            max-width: 100%;
+            margin-top: 24px;
+            padding: 0 20px;
+          }
+        }
+        /* newsletter-title  */
+        .newsletter-title {
+          color: #131318;
+          font-size: 24px;
+          font-weight: 800;
+          align-self: start;
+        }
+        /* newsletter-description */
+        .newsletter-description {
+          color: #5a5a5d;
+          line-height: 26px;
+          align-self: start;
+          margin-top: 16px;
+        }
+        /* newsletter-divider */
+        .newsletter-divider {
+          margin-top: 23px;
+          height: 1px;
+          border: 1px solid rgba(19, 19, 24, 0.1);
+        }
+        /* newsletter-input */
+        .newsletter-input {
+          border-radius: 8px;
+          background-color: rgba(19, 19, 24, 0.05);
+          margin-top: 24px;
+          color: rgba(19, 19, 24, 0.3);
+          padding: 16px 20px;
+        }
+        /* subscribe-button */
+        .subscribe-button {
+          border-radius: 8px;
+          background-color: #ff5400;
+          margin-top: 24px;
+          font-size: 20px;
+          color: #fff;
+          font-weight: 800;
+          white-space: nowrap;
+          text-align: center;
+          padding: 14px 70px;
+        }
+        @media (max-width: 991px) {
+          .subscribe-button {
+            white-space: initial;
+            padding: 0 20px;
+          }
+        }
+        /* newsletter-image */
+        .newsletter-image {
+          display: flex;
+          flex-direction: column;
+          border-radius: 16px;
+          position: relative;
+          min-height: 422px;
+          flex-grow: 1;
+          align-items: end;
+          color: #fff;
+          padding: 204px 80px 5px;
+          font: 800 32px Mulish, sans-serif;
+        }
+        @media (max-width: 991px) {
+          .newsletter-image {
+            max-width: 100%;
+            margin-top: 24px;
+            padding: 100px 0 0 20px;
+          }
+        }
+        /* newsletter-background */
+        .newsletter-background {
+          position: absolute;
+          inset: 0;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+        /* newsletter-offer */
+        .newsletter-offer {
+          position: relative;
+          border-radius: 16px;
+          background-color: #ff5400;
+          width: 337px;
+          max-width: 100%;
+          padding: 63px 41px 30px;
+        }
+        @media (max-width: 991px) {
+          .newsletter-offer {
+            padding: 0 20px;
+          }
+        }
+        /* footer */
+        .footer {
+          background-color: rgba(19, 19, 24, 0.05);
+          align-self: stretch;
+          display: flex;
+          margin-top: 100px;
+          width: 100%;
+          flex-direction: column;
+          align-items: center;
+          padding: 110px 60px;
+          font: 16px Mulish, sans-serif;
+        }
+        @media (max-width: 991px) {
+          .footer {
+            max-width: 100%;
+            margin-top: 40px;
+            padding: 100px 20px;
+          }
+        }
+        /* footer-logo */
+        .footer-logo {
+          display: flex;
+          width: 241px;
+          max-width: 100%;
+          gap: 16px;
+          font-size: 32px;
+          color: #ff5400;
+          font-weight: 800;
+        }
+        /* footer-logo-image */
+        .footer-logo-image {
+          aspect-ratio: 1.18;
+          object-fit: contain;
+          object-position: center;
+          width: 47px;
+        }
+        /* footer-logo-text */
+        .footer-logo-text {
+          flex-grow: 1;
+          width: 169px;
+        }
+        /* footer-description */
+        .footer-description {
+          color: #5a5a5d;
+          font-weight: 400;
+          line-height: 26px;
+          text-align: center;
+          margin-top: 15px;
+          width: 769px;
+        }
+        @media (max-width: 991px) {
+          .footer-description {
+            max-width: 100%;
+          }
+        }
+        /* footer-divider */
+        .footer-divider {
+          align-self: stretch;
+          z-index: 10;
+          margin-top: 32px;
+          height: 1px;
+          border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        @media (max-width: 991px) {
+          .footer-divider {
+            max-width: 100%;
+          }
+        }
+        /* footer-social */
+        .footer-social {
+          aspect-ratio: 7.25;
+          object-fit: contain;
+          object-position: center;
+          width: 1100px;
+          max-width: 100%;
+        }
+        /* footer-copyright */
+        .footer-copyright {
+          color: #131318;
+          font-family: Inter, sans-serif;
+          font-weight: 300;
+          margin: 50px 0 -22px;
+        }
+        @media (max-width: 991px) {
+          .footer-copyright {
+            margin: 40px 0 10px;
+          }
+        }
+        </style>
+        <!-- CSS End -->
+</head>
+<body>
+    <!--landing-page-design Start-->
+    <section class="landing-page-design">
+        <header class="header-container">
+            <!--Wanderlust Explorers Start-->
+          <div class="logo-container">
+            <!--Wanderlust Explorers Logo-->
+            <img loading="lazy" src="Images/Group 40071 (2.1).jpeg" class="logo-image" alt="Wanderlust Explorers Logo" />
+            <h1 class="logo-text">Wanderlust <span style="color: #ff5400;">Explorers</span></h1>
+             <!--Wanderlust Explorers End-->
+          </div>
+           <!--nav-container Start-->
+          <nav class="nav-container">
+            <a href="#" class="nav-item nav-item-active">Home</a>
+            <a href="#" class="nav-item">Packages</a>
+            <a href="#" class="nav-item">Testimonial</a>
+            <a href="#" class="nav-item">Blog</a>
+            <a href="#" class="nav-item">Contact</a>
+          </nav>
+          <!--nav-container End-->
+        </header>
+        <!--landing-page-design End-->
+         <!--Explore Your Travel Start-->
+        <section class="hero-section">
+            <!--Travel destination landscape Img-->
+          <img loading="lazy" src="Images/Group 13 (1) (1).png" class="hero-image" alt="Travel destination landscape" />
+          <div class="hero-content">
+            <div class="hero-text-container">
+              <h2 class="hero-title">Explore Your Travel</h2>
+              <p class="hero-description">Dolor sit amet consectetur. Nullam suspendisse vitae ultricies dolor adipiscing. In et odio enim ac quis sapien urna eu phasellus.</p>
+            </div>
+            <!--search-container Start-->
+            <form class="search-container">
+              <div class="search-input">
+                <!--Where to go-->
+                <label for="whereGo" class="visually-hidden">Where to go</label>
+                <input id="whereGo" type="text" class="search-field" placeholder="Where go" />
+              </div>
+              <!--When to go-->
+              <div class="search-input">
+                <label for="whenGo" class="visually-hidden">When to go</label>
+                <div class="search-dropdown">
+                  <span class="dropdown-text">When</span>
+                </div>
+              </div>
+              <div class="search-input">
+                <!--Select type-->
+                <label for="selectType" class="visually-hidden">Select type</label>
+                <div class="search-dropdown">
+                  <span class="dropdown-text">Select Type</span>
+                </div>
+              </div>
+              <!--Find Now button-->
+              <button type="submit" class="search-button">
+                <img loading="lazy" src="Images/search-removebg-preview.png" class="search-icon" alt="" />
+                <span class="search-text">Find Now</span>
+              </button>
+            </form>
+          </div>
+        </section>
+      <!--Explore Your Travel End-->
+      <!--popular-tours-section Start-->
+        <section class="popular-tours-section">
+            <!--popular-tours-content-->
+          <div class="popular-tours-content">
+            <!--popular-tours-text-->
+            <div class="popular-tours-text">
+                <!--Our Popular Tours-->
+              <h2 class="popular-tours-title">Our Popular Tours</h2>
+              <p class="popular-tours-description">Dolor sit amet consectetur. Diam volutpat neque habitasse pharetra odio sit massa. Sodales dictumst nec nibh pellentesque.</p>
+              <p class="popular-tours-features">Tempus euismod lacus mauris dignissim quis in ultrices. Magna nullam odio neque diam. Sociis erat at .</p>
+              <p class="popular-tours-features">Adipiscing ornare pellentesque mauris volutpat tortor vitae platea porta lacus. Lectus suspendisse nullam.</p>
+              <p class="popular-tours-features">Accumsan eget et turpis praesent lorem egestas enim elit bibendum. Risus at in.</p>
+              <p class="popular-tours-features">Amet consectetur. Vulputate commodo felis molestie risus ornare nulla amet et. Libero commodo sagittis dignissim adipiscing quis. Habitant adipiscing risus natoque aliquet. Id bibendum nunc senectus semper tincidunt.</p>
+              <!--Read-more-button-->
+              <a href="#" class="read-more-button">Read More</a>
+            </div>
+            <!--popular-tours-image-->
+            <img loading="lazy" src="Images/Rectangle 4.png" class="popular-tours-image" alt="Popular tour destination" />
+          </div>
+        </section>
+        <!--popular-tours-section Start End-->
+
+        <!--destination-section Start-->
+        <section class="destination-section">
+            <!--Choose Your Destination-->
+          <h2>Choose Your Destination</h2>
+          <p class="destination-description">Dolor sit amet consectetur. Diam volutpat neque habitasse pharetra odio sit massa. Sodales dictumst nec nibh pellentesque.</p>
+          <div class="destination-grid">
+            <div class="destination-row">
+              <div class="destination-item">
+                <!--1st Img- Maldives landscape-->
+                <img loading="lazy" src="Images/1.Maldives.png" class="destination-image" alt="Maldives landscape" />
+                <span class="destination-name">Maldives</span>
+              </div>
+              <div class="destination-item">
+                    <!--2nd Img- Indonesia-->
+                <img loading="lazy" src="Images/2.Indonesia.png" class="destination-image" alt="Indonesia landscape" />
+                <span class="destination-name">Indonesia</span>
+              </div>
+            </div>
+            <div class="destination-row">
+              <div class="destination-item">
+                    <!--3rd Img- Sri Lanka-->
+                <img loading="lazy" src="Images/3.Sri Lanka.png" class="destination-image" alt="Sri Lanka landscape" />
+                <span class="destination-name">Sri Lanka</span>
+              </div>
+              <div class="destination-item">
+                <!--4th Img North America-->
+                <img loading="lazy" src="Images/4.North America.png" class="destination-image" alt="North America landscape" />
+                <span class="destination-name">North America</span>
+              </div>
+              <div class="destination-item">
+                <!--5th Img Kashmir-->
+                <img loading="lazy" src="Images/5.Kashmir.png" class="destination-image" alt="Kashmir landscape" />
+                <span class="destination-name">Kashmir</span>
+              </div>
+            </div>
+            <div class="destination-row">
+              <div class="destination-item">
+                <!--6th Img Bangladesh-->
+                <img loading="lazy" src="Images/6.Bangladesh.png" class="destination-image" alt="Bangladesh landscape" />
+                <span class="destination-name">Bangladesh</span>
+              </div>
+              <div class="destination-item">
+                <!--6th Img Bandarban-->
+                <img loading="lazy" src="Images/7.Bandarban Rectangle 10.png" class="destination-image" alt="Bandarban landscape" />
+                <span class="destination-name">Bandarban</span>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!--destination-section End-->
+        <!--Why Choose Us Start-->
+        <section class="why-choose-us-section">
+          <h2>Why Choose Us</h2>
+          <p class="why-choose-us-description">Dolor sit amet consectetur. Diam volutpat neque habitasse pharetra odio sit massa. Sodales dictumst nec nibh pellentesque.</p>
+            <!--Why Choose Us End-->
+            <!--Handpicked Hotels Start-->
+          <div class="features-container">
+            <div class="features-row">
+              <div class="feature-item">
+                <img loading="lazy" src="Images/Handpicked Hotels.png" class="feature-icon" alt="" />
+                <h3 class="feature-title">Handpicked Hotels</h3>
+                <p class="feature-description">Amet consectetur. Vulputate commodo felis molestie risus ornare nulla amet et. Libero commodo sagittis dignissim adipiscing quis. Habitant adipiscing risus natoque aliquet.</p>
+              </div>
+               <!--Handpicked Hotels End-->
+               <!--World Class Service Start-->
+              <div class="feature-item">
+                <img loading="lazy" src="Images/FS-2-removebg-preview.png" class="feature-icon" alt="" />
+                <h3 class="feature-title">World Class Service</h3>
+                <p class="feature-description">Amet consectetur. Vulputate commodo felis molestie risus ornare nulla amet et. Libero commodo sagittis dignissim adipiscing quis. Habitant adipiscing risus natoque aliquet.</p>
+              </div>
+            </div>
+            <!--World Class Service End-->
+
+            <div class="feature-item">
+                <!--Best Price Guarantee start-->
+              <img loading="lazy" src="Images/pngaaa.com-538963.png" class="feature-icon" alt="" />
+              <h3 class="feature-title">Best Price Guarantee</h3>
+              <p class="feature-description">Amet consectetur. Vulputate commodo felis molestie risus ornare nulla amet et. Libero commodo sagittis dignissim adipiscing quis. Habitant adipiscing risus natoque aliquet.</p>
+            </div>
+          </div>
+          <!--Best Price Guarantee start End-->
+        </section>
+      <!--Deals & Discounts start-->
+        <section class="deals-section">
+          <h2>Deals & Discounts</h2>
+          <p class="deals-description">Dolor sit amet consectetur. Diam volutpat neque habitasse pharetra odio sit massa. Sodales dictumst nec nibh pellentesque.</p>
+          <!-- deal-card -->
+          </section>
+          <div class="deal-card">
+            <img loading="lazy" src="Images/Group 39.png" class="deal-image" alt="Santorini landscape" />
+            <div class="deal-content">
+              <div class="deal-info">
+                <div class="deal-detail">
+                    <!-- lazy -->
+                  <img loading="lazy" src="Images/Group 40.png" class="deal-icon" alt="" />
+                  <!-- deal-text -->
+                  <span class="deal-text">7 Day / 6 Night</span>
+                </div>
+                <div class="deal-detail">
+                  <img loading="lazy" src="Images/Group 39.png" class="deal-icon" alt="" />
+                  <span class="deal-text">Max : 10</span>
+                </div>
+                <!-- deal-detail -->
+                <div class="deal-detail">
+                  <img loading="lazy" src="Images/Lo.png" class="deal-icon" alt="" />
+                  <span class="deal-text">Malaysia</span>
+                </div>
+              </div>
+              <!-- Tour To Santorini -->
+              <h3 class="deal-title">Tour To Santorini</h3>
+              <p class="deal-description">Amet consectetur. Vulputate commodo felis molestie risus ornare nulla amet et. Libero commodo sagittis dignissim adipiscing quis. Habitant adipiscing.</p>
+              <p class="deal-price">Price: $1300-$1500</p>
+              <a href="#" class="book-now-button">Book Now</a>
+            </div>
+          </div>
+          <div class="deal-card">
+            <img loading="lazy" src="Images/Group 40.png" />
+            <div class="deal-content">
+              <div class="deal-info">
+                <div class="deal-detail">
+                  <img loading="lazy" src="Images/Group 40.png" class="deal-icon" alt="" />
+                  <span class="deal-text">7 Day / 6 Night</span>
+                </div>
+                <div class="deal-detail">
+                  <img loading="lazy" src="Images/Group 40.png" class="deal-icon" alt="" />
+                  <span class="deal-text">Max : 10</span>
+                </div>
+                <div class="deal-detail">
+                  <img loading="lazy" src="Images/Lo.png" class="deal-icon" alt="" />
+                  <span class="deal-text">Malaysia</span>
+                </div>
+              </div>
+              <!-- Tour To Santorini -->
+              <h3 class="deal-title">Tour To Santorini</h3>
+              <p class="deal-description">Amet consectetur. Vulputate commodo felis molestie risus ornare nulla amet et. Libero commodo sagittis dignissim adipiscing quis. Habitant adipiscing.</p>
+              <p class="deal-price">Price: $1300-$1500</p>
+              <a href="#" class="book-now-button">Book Now</a>
+            </div>
+          </div>
+          <div class="deal-card">
+            <img loading="lazy" src="Images/Group 39.png" class="deal-image" alt="Third tour destination" />
+            <div class="deal-content">
+              <div class="deal-info">
+                <div class="deal-detail">
+                  <img loading="lazy" src="Images/Group 39.png" class="deal-icon" alt="" />
+                  <span class="deal-text">7 Day / 6 Night</span>
+                </div>
+                <div class="deal-detail">
+                  <img loading="lazy" src="Images/Group 39.png" class="deal-icon" alt="" />
+                  <span class="deal-text">Max : 10</span>
+                </div>
+                <div class="deal-detail">
+                  <img loading="lazy" src="Images/Lo.png" class="deal-icon" alt="" />
+                  <span class="deal-text">Malaysia</span>
+                </div>
+              </div>
+              <!-- Tour To Santorini -->
+              <h3 class="deal-title">Tour To Santorini</h3>
+              <p class="deal-description">Amet consectetur. Vulputate commodo felis molestie risus ornare nulla amet et. Libero commodo sagittis dignissim adipiscing quis. Habitant adipiscing.</p>
+              <p class="deal-price">Price: $1300-$1500</p>
+              <a href="#" class="book-now-button">Book Now</a>
+            </div>
+          </div>
+          <a href="#" class="see-all-packages">See All Packages</a>
+        </section>
+      <!--Deals & Discounts start End-->
+      <!-- video-section start -->
+        <section class="video-section">
+          <div class="video-content">
+            <div class="video-text">
+              <h2 class="video-title">A Simple Perfect Place To Get Lost</h2>
+              <p class="video-description">Amet consectetur. Vulputate commodo felis molestie risus ornare nulla amet et. Libero commodo sagittis dignissim adipiscing quis.</p>
+              <p class="video-feature">Adipiscing ornare pellentesque mauris volutpat tortor vitae platea porta lacus. Lectus suspendisse nullam.</p>
+              <p class="video-feature">Adipiscing ornare pellentesque mauris volutpat tortor vitae platea porta lacus. Lectus suspendisse nullam.</p>
+              <a href="#" class="see-more-button">See More</a>
+            </div>
+            <!-- video-container -->
+            <div class="video-container">
+              <img loading="lazy" src="Images/Group 40089.png"
+              class="video-thumbnail" alt="Video thumbnail of a mountain in Bangladesh" />
+              <div class="video-overlay">
+                <div class="video-controls">
+                  <div class="video-duration">
+                    <img loading="lazy" src="Images/Rectangle 8 (1).png" class="duration-icon" alt="" />
+                    <span class="duration-text">0.00</span>
+                  </div>
+                  <div class="video-title-overlay">
+                    <h3 class="video-title-text">Watch Our Mountain in Bangladesh</h3>
+                    <img loading="lazy" src="Images/Play.jpg" class="play-button" alt="Play video" />
+                  </div>
+                </div>
+                <div class="progress-bar"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- video-section End -->
+         <!-- newsletter-section -->
+        <section class="newsletter-section">
+          <div class="newsletter-content">
+            <form class="newsletter-form">
+              <h2 class="newsletter-title">Newsletter</h2>
+              <p class="newsletter-description">Get your daily dose of travel news & tips. Sign up today!</p>
+              <!-- newsletter-divider -->
+              <div class="newsletter-divider"></div>
+              <label for="name" class="visually-hidden">Enter your name</label>
+              <input type="text" id="name" class="newsletter-input" placeholder="Enter your name" />
+              <label for="email" class="visually-hidden">Enter your email</label>
+              <input type="email" id="email" class="newsletter-input" placeholder="Enter your email" />
+              <button type="submit" class="subscribe-button">Subscribe</button>
+            </form>
+            <!-- newsletter-image -->
+            <div class="newsletter-image">
+              <img loading="lazy" src="Images/Rectangle 8 (1).png" class="newsletter-background" alt="Newsletter background image" />
+              <p class="newsletter-offer">Save up to 70%</p>
+            </div>
+          </div>
+        </section>
+      <!-- newsletter-section End -->
+       <!-- footer -->
+        <footer class="footer">
+          <div class="footer-logo">
+            <img loading="lazy" src="Images/Group 40071 (2.1).jpeg" class="footer-logo-image" alt="Hero Travel logo" />
+            <span class="footer-logo-text">Wanderlust 
+                <span style="color: #ff5400;">Explorers</span></span>
+          </div>
+          <!-- footer-description -->
+          <p class="footer-description">Fueling your passion for adventure, one journey at a time. Whether you're seeking hidden gems, breathtaking landscapes, or cultural treasures, we guide you through the world's most awe-inspiring destinations. Join us on this endless exploration and embrace the beauty of wanderlust. 🌍✈️</p>
+          <div class="footer-divider"></div>
+          <!-- Social media icons -->
+          <img loading="lazy" src="Images/sosal.png" class="footer-social" alt="Social media icons" />
+          <div class="footer-divider"></div>
+          <p class="footer-copyright">2017, All Rights Reserved.</p>
+        </footer>
+        <!-- footer End -->
+      </section>
+      <!--landing-page-design End-->
+</body>
+</html>
